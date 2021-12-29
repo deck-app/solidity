@@ -14,5 +14,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image with php5.6
+    - name: Build the Docker image with solidity
       run: docker-compose build
