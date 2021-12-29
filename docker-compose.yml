@@ -1,0 +1,8 @@
+version: '3'
+services:
+  solidity:
+    build:
+      context: '.'
+    volumes:
+      - '${APP_CODE_PATH_HOST}:${APP_CODE_PATH_SOLIDITY}${APP_CODE_CONTAINER_FLAG}'
+volumes: {}
