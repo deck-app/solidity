@@ -9,7 +9,7 @@ if [[ "$(ls -A "/var/www/")" ]] ;
     then
         echo "If the Directory is not empty, please delete the hidden files and directory"
     else
-        git clone https://github.com/ethereum/browser-solidity.git .
+        sudo git clone https://github.com/ethereum/browser-solidity.git .
 fi
 sudo cp /app/default.conf /etc/nginx/conf.d/default.conf
 nginx -s reload
