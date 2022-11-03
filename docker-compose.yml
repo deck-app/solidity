@@ -1,8 +1,16 @@
-version: "3"
+version: '3'
 services:
   solidity:
-    image: remixproject/remix-ide:latest
+    build:
+      context: 'solidity/${BACK_END}'
+      dockerfile: 'Dockerfile-${PHP_VERSION}'
+      args:
+        - 'BACK_END=${BACK_END}'
+        - 'USER_ID=${USER_ID}'
+        - 'GROUP_ID=${GROUP_ID}'
+        - 'PHP_VERSION=${PHP_VERSION}'
+    volumes:
+      - '${APP_CODE_PATH_HOST}:${APP_CODE_PATH_SOLIDITY}${APP_CODE_CONTAINER_FLAG}'
     ports:
-          - "${SOLIDITY_HOST_HTTP_PORT}:80"
-          - "65520:65520"
+      - '${SOLIDITY_HOST_HTTP_PORT}:80'
 volumes: {}

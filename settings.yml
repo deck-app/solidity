@@ -1,29 +1,45 @@
 #User defined
 user:
-  # back_end:
-  #   label:
-  #     Backend
-  #   hint:
-  #     Select a backend from the list above
-  #   type:
-  #     select
-  #   values:
-  #     - apache
-  #     - nginx
-  #   target:
-  #     BACK_END
-  # php_version:
-  #   label:
-  #     PHP version
-  #   hint:
-  #     Select a PHP version from the list above
-  #   type:
-  #     select
-  #   values:
-  #     - 7.4
-  #     - "8.0"
-  #   target:
-  #     PHP_VERSION
+  back_end:
+    label:
+      Backend
+    hint:
+      Select a backend from the list above
+    type:
+      select
+    values:
+      - apache
+      - nginx
+    target:
+      BACK_END
+  php_version:
+    label:
+      PHP version
+    hint:
+      Select a PHP version from the list above
+    type:
+      select
+    values:
+      - 7.4
+      - "8.0"
+      - 8.1
+    target:
+      PHP_VERSION
+  
+  # backend_ws:
+  #     disabled_post_install: true
+  #     label:
+  #       Laravel version
+  #     hint:
+  #       Select a laravel version
+  #     type:
+  #       select
+  #     values:
+  #       - 7
+  #       - 8
+  #       - 9
+  #     target:
+  #       LARAVEL_VERSION
 
   # php_error_reporting:
   #   label:
@@ -41,14 +57,6 @@ user:
   #   hint: Check the box to display extension xdebug
   #   target:
   #     XDEBUG
-  # SYMFONY_install:
-  #   label:
-  #     DO NOT install symfony
-  #   type:
-  #     checkbox
-  #   hint: Incase you have a symfony project already installed at the selected path
-  #   target:
-  #     SYMFONY_INSTALL
     
   # mysql_version:
   #   label:
@@ -77,12 +85,12 @@ user:
 
 #System defaults
 system:
-  # show_localpath_selector:
-  #   true
+  show_localpath_selector:
+    true
   #For collecting and storing DB in .env
   #db/user/password
-  #   db_credentials:
-  #     false
+  # db_credentials:
+  #   true
   #Generate public ports for the docker image
   ports:
     http:
